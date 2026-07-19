@@ -1,0 +1,14 @@
+# Never commit the actual data — this repo only stores links to Drive.
+*.zip
+*.tar
+*.tar.gz
+*.csv
+*.parquet
+*.json
+*.png
+*.jpg
+*.jpeg
+*.npy
+*.pt
+*.ckpt
+data/

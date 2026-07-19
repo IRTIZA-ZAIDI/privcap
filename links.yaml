@@ -1,0 +1,21 @@
+# Machine-readable mirror of the dataset drive links.
+# Keep in sync with the README tables under datasets/<name>/.
+# Entries with no Drive link have an in-repo folder to be populated later.
+
+vispr:
+  raw_images_and_labels:   { folder: test,                                        url: "https://drive.google.com/drive/folders/1cCuMgMJ_Ie42bW4iwmSGebpF0SibHVJd?usp=sharing" }
+  captions_both:           { folder: free_select_no_suppression7,                 url: "https://drive.google.com/drive/folders/1jEtgaYV0WYW3kHZplgkx4_5CkVmFMbso?usp=sharing" }
+  cleaned_labels:          { folder: audit_out1,                                  url: "https://drive.google.com/drive/folders/1SLP-3IYJ2A1sPsuEZ4-rQJ4Tzx8YXS5C?usp=sharing" }
+  caption_gen_notebook:    { folder: vispr_caption_gen,                           url: "https://drive.google.com/file/d/13xG0A7Tjn8OAAIsq7hRwmgxAZP5s1g5l/view?usp=sharing" }
+
+privacy_alert:
+  raw_images_and_labels:   { folder: test,                                        url: "https://drive.google.com/drive/folders/14wl68r4RhUMwP6bZgkeR0yKatB8v_DDA?usp=sharing" }
+  captions_both:           { folder: caption_generation_keyword_induced_final_v2, url: "https://drive.google.com/drive/folders/19tB3RpOlyCMzeuGYYhQa5brw51Cj7KyY?usp=sharing" }
+  cleaned_labels:          { folder: null, in_repo: datasets/privacy_alert/cleaned_labels, url: "" }
+  caption_gen_notebook:    { folder: PA_caption_gen,                              url: "https://drive.google.com/file/d/1gsjn8VXfvNx5GRL8-5httppjkSi5iomz/view?usp=sharing" }
+
+dipa2:
+  raw_images_and_labels:   { folder: dataset,                                     url: "https://drive.google.com/drive/folders/15PAbe0YK6TRTAoLuZohY5YoFq-b2-d9q?usp=sharing" }
+  captions_both:           { folder: new_exps,                                    url: "https://drive.google.com/drive/folders/1PFFP4ON__w2svtbg1IFObCuvpNeZwuG3?usp=sharing" }
+  cleaned_labels:          { folder: null, in_repo: datasets/dipa2/cleaned_labels, url: "" }
+  caption_gen_notebook:    { folder: null, in_repo: datasets/dipa2/caption_gen_notebook, url: "" }
