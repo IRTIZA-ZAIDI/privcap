@@ -1,14 +1,18 @@
-# Never commit the actual data — this repo only stores links to Drive.
+# Raw data, result dumps, and generated stats output stay out of git —
+# they live on the Hugging Face dataset repo (see docs/data_sources.md)
+# or get written to a local ./out directory by scripts/dataset_stats/.
 *.zip
 *.tar
 *.tar.gz
-*.csv
 *.parquet
-*.json
 *.png
-*.jpg
-*.jpeg
 *.npy
 *.pt
 *.ckpt
 data/
+out/
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
