@@ -23,7 +23,7 @@ from typing import Any, Iterable
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-ROOT = SCRIPT_DIR.parents[2]
+ROOT = SCRIPT_DIR.parents[1]  # analysis/caption_effect_evaluation/ -> repo root
 
 MODELS = {
     "ministral": "Ministral-3B",
@@ -32,59 +32,68 @@ MODELS = {
     "llama": "LLaMA-3.2-11B",
 }
 
+# MULTIMODAL_FILES points at the caption-conditioned evaluation outputs. These are
+# not committed to this repository (they run into the gigabytes) -- obtain them from
+# the Hugging Face dataset repo referenced in the top-level README and place the tree
+# at ROOT / "results/multimodal/" to match the layout below before running this script.
 MULTIMODAL_FILES = {
     "VISPR": {
-        "ministral": ROOT / "Full Runs/_Multimodal/VISPR/ministral/mistralai_ministral-3-3b_vispr_multimodal_20260624_170215_CORRECTED.json",
-        "gemma": ROOT / "Full Runs/_Multimodal/VISPR/gemma/google_gemma-3-4b_vispr_multimodal_20260629_094855_CORRECTED.json",
-        "qwen": ROOT / "Full Runs/_Multimodal/VISPR/qwen/qwen_qwen3-vl-8b_vispr_multimodal_20260622_155902_CORRECTED.json",
-        "llama": ROOT / "Full Runs/_Multimodal/VISPR/llama/meta_llama3_2-vl-11b_vispr_multimodal_20260801_070059_CORRECTED.json",
+        "ministral": ROOT / "results/multimodal/vispr/ministral/mistralai_ministral-3-3b_vispr_multimodal_20260624_170215_CORRECTED.json",
+        "gemma": ROOT / "results/multimodal/vispr/gemma/google_gemma-3-4b_vispr_multimodal_20260629_094855_CORRECTED.json",
+        "qwen": ROOT / "results/multimodal/vispr/qwen/qwen_qwen3-vl-8b_vispr_multimodal_20260622_155902_CORRECTED.json",
+        "llama": ROOT / "results/multimodal/vispr/llama/meta_llama3_2-vl-11b_vispr_multimodal_20260801_070059_CORRECTED.json",
     },
     "PrivacyAlert": {
-        "ministral": ROOT / "Full Runs/_Multimodal/PrivacyAlert/ministral/mistralai_ministral-3-3b_privacyalert_multimodal_20260807_064809_all_tasks.json",
-        "gemma": ROOT / "Full Runs/_Multimodal/PrivacyAlert/gemma/google_gemma-3-4b_privacyalert_multimodal_20260809_091539_all_tasks.json",
-        "qwen": ROOT / "Full Runs/_Multimodal/PrivacyAlert/qwen/qwen_qwen3-vl-8b_privacyalert_multimodal_20260801_215526_all_tasks.json",
-        "llama": ROOT / "Full Runs/_Multimodal/PrivacyAlert/llama/meta_llama3_2-vl-11b_privacyalert_multimodal_20260810_082052_all_tasks.json",
+        "ministral": ROOT / "results/multimodal/privacyalert/ministral/mistralai_ministral-3-3b_privacyalert_multimodal_20260807_064809_all_tasks.json",
+        "gemma": ROOT / "results/multimodal/privacyalert/gemma/google_gemma-3-4b_privacyalert_multimodal_20260809_091539_all_tasks.json",
+        "qwen": ROOT / "results/multimodal/privacyalert/qwen/qwen_qwen3-vl-8b_privacyalert_multimodal_20260801_215526_all_tasks.json",
+        "llama": ROOT / "results/multimodal/privacyalert/llama/meta_llama3_2-vl-11b_privacyalert_multimodal_20260810_082052_all_tasks.json",
     },
     "DIPA2": {
-        "ministral": ROOT / "Full Runs/_Multimodal/DIPA2/ministral/mistralai_ministral-3-3b_dipa2_multimodal_20260813_021101_all_tasks.json",
-        "gemma": ROOT / "Full Runs/_Multimodal/DIPA2/gemma/google_gemma-3-4b_dipa2_multimodal_20260813_000237_all_tasks.json",
-        "qwen": ROOT / "Full Runs/_Multimodal/DIPA2/qwen/qwen_qwen3-vl-8b_dipa2_multimodal_20260812_203503_all_tasks.json",
-        "llama": ROOT / "Full Runs/_Multimodal/DIPA2/llama/meta_llama3-2-11b_dipa2_multimodal_20260813_045224_all_tasks.json",
+        "ministral": ROOT / "results/multimodal/dipa2/ministral/mistralai_ministral-3-3b_dipa2_multimodal_20260813_021101_all_tasks.json",
+        "gemma": ROOT / "results/multimodal/dipa2/gemma/google_gemma-3-4b_dipa2_multimodal_20260813_000237_all_tasks.json",
+        "qwen": ROOT / "results/multimodal/dipa2/qwen/qwen_qwen3-vl-8b_dipa2_multimodal_20260812_203503_all_tasks.json",
+        "llama": ROOT / "results/multimodal/dipa2/llama/meta_llama3-2-11b_dipa2_multimodal_20260813_045224_all_tasks.json",
     },
 }
 
+# REPLICATION_FILES points at the image-only evaluation outputs, committed under
+# results/image_only/ in this repository.
 REPLICATION_FILES = {
     "VISPR": {
-        "ministral": ROOT / "Full Runs/VISPR/ministral/mistralai_Ministral-3-3B-Instruct-2512_20260414_184228_results.json",
-        "qwen": ROOT / "Full Runs/VISPR/qwen/Qwen_Qwen3-VL-8B-Instruct_20260416_151303_results.json",
-        "llama": ROOT / "Full Runs/VISPR/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_20260523_113548_results.json",
+        "ministral": ROOT / "results/image_only/vispr/ministral/mistralai_Ministral-3-3B-Instruct-2512_20260414_184228_results.json",
+        "qwen": ROOT / "results/image_only/vispr/qwen/Qwen_Qwen3-VL-8B-Instruct_20260416_151303_results.json",
+        "llama": ROOT / "results/image_only/vispr/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_20260523_113548_results.json",
     },
     "PrivacyAlert": {
-        "ministral": ROOT / "Full Runs/PrivacyAlert/ministral/mistralai_Ministral-3-3B-Instruct-2512-BF16_privacyalert_20260523_100634_results.json",
-        "gemma": ROOT / "Full Runs/PrivacyAlert/gemma/google_gemma-3-4b-it_privacyalert_20260523_042225_results.json",
-        "qwen": ROOT / "Full Runs/PrivacyAlert/qwen/Qwen_Qwen3-VL-8B-Instruct_privacyalert_20260522_194006_results.json",
-        "llama": ROOT / "Full Runs/PrivacyAlert/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_privacyalert_20260521_024216_results.json",
+        "ministral": ROOT / "results/image_only/privacyalert/ministral/mistralai_Ministral-3-3B-Instruct-2512-BF16_privacyalert_20260523_100634_results.json",
+        "gemma": ROOT / "results/image_only/privacyalert/gemma/google_gemma-3-4b-it_privacyalert_20260523_042225_results.json",
+        "qwen": ROOT / "results/image_only/privacyalert/qwen/Qwen_Qwen3-VL-8B-Instruct_privacyalert_20260522_194006_results.json",
+        "llama": ROOT / "results/image_only/privacyalert/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_privacyalert_20260521_024216_results.json",
     },
     "DIPA2": {
-        "ministral": ROOT / "Full Runs/DIPA2/ministral/mistralai_Ministral-3-3B-Instruct-2512-BF16_dipa2_20260521_181043_results.json",
-        "gemma": ROOT / "Full Runs/DIPA2/gemma/google_gemma-3-4b-it_dipa2_20260520_144522_results.json",
-        "qwen": ROOT / "Full Runs/DIPA2/qwen/Qwen_Qwen3-VL-8B-Instruct_dipa2_20260520_104048_results.json",
-        "llama": ROOT / "Full Runs/DIPA2/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_dipa2_20260520_155350_results.json",
+        "ministral": ROOT / "results/image_only/dipa2/ministral/mistralai_Ministral-3-3B-Instruct-2512-BF16_dipa2_20260521_181043_results.json",
+        "gemma": ROOT / "results/image_only/dipa2/gemma/google_gemma-3-4b-it_dipa2_20260520_144522_results.json",
+        "qwen": ROOT / "results/image_only/dipa2/qwen/Qwen_Qwen3-VL-8B-Instruct_dipa2_20260520_104048_results.json",
+        "llama": ROOT / "results/image_only/dipa2/llama/meta-llama_Llama-3_2-11B-Vision-Instruct_dipa2_20260520_155350_results.json",
     },
 }
 
+# VISPR's Gemma replication run was exported across two temperature batches; the
+# original nested Drive-export folder names have been flattened to temp_0.1/ and
+# temp_1.0/ under results/image_only/vispr/gemma/.
 VISPR_GEMMA_REPLICATION = {
     0.1: {
-        "task1": [ROOT / "Full Runs/VISPR/gemma/gemma-4b-0.1-20260428T111055Z-3-001/gemma-4b-0.1/google_gemma-3-4b-it_20260427_183948_ckpt_0_1_task1.json"],
-        "task2": [ROOT / "Full Runs/VISPR/gemma/gemma-4b-0.1-20260428T111055Z-3-001/gemma-4b-0.1/google_gemma-3-4b-it_20260427_183948_ckpt_0_1_task2.json"],
-        "task3": [ROOT / "Full Runs/VISPR/gemma/gemma-4b-0.1-20260428T111055Z-3-001/gemma-4b-0.1/google_gemma-3-4b-it_20260427_185655_ckpt_0_1_task3.json"],
+        "task1": [ROOT / "results/image_only/vispr/gemma/temp_0.1/task1.json"],
+        "task2": [ROOT / "results/image_only/vispr/gemma/temp_0.1/task2.json"],
+        "task3": [ROOT / "results/image_only/vispr/gemma/temp_0.1/task3.json"],
     },
     1.0: {
-        "task1": [ROOT / "Full Runs/VISPR/gemma/gemma-4b-20260425T095936Z-3-001/gemma-4b/google_gemma-3-4b-it_20260424_083728_ckpt_1_0_task1.json"],
-        "task2": [ROOT / "Full Runs/VISPR/gemma/gemma-4b-20260425T095936Z-3-001/gemma-4b/google_gemma-3-4b-it_20260424_083728_ckpt_1_0_task2.json"],
+        "task1": [ROOT / "results/image_only/vispr/gemma/temp_1.0/task1.json"],
+        "task2": [ROOT / "results/image_only/vispr/gemma/temp_1.0/task2.json"],
         "task3": [
-            ROOT / "Full Runs/VISPR/gemma/gemma-4b-20260425T095936Z-3-001/gemma-4b/google_gemma-3-4b-it_20260424_083728_ckpt_1_0_task3.json",
-            ROOT / "Full Runs/VISPR/gemma/gemma-4b-20260425T095936Z-3-001/gemma-4b/google_gemma-3-4b-it_20260425_085251_ckpt_1_0_task3.json",
+            ROOT / "results/image_only/vispr/gemma/temp_1.0/task3_part1.json",
+            ROOT / "results/image_only/vispr/gemma/temp_1.0/task3_part2.json",
         ],
     },
 }

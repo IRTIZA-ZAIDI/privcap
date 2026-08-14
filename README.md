@@ -20,8 +20,9 @@ a shared 14-category privacy taxonomy for evaluation. See
 ## What's in this repo
 
 This repo holds the **code**: caption-generation notebooks, evaluation
-notebooks, and analysis scripts. It does not hold the raw images or the
-multi-gigabyte evaluation result files. Those are hosted on the
+notebooks, and analysis scripts, plus the image-only evaluation results
+(small enough to version). It does not hold the raw images or the
+multi-gigabyte multimodal evaluation result files. Those are hosted on the
 **Hugging Face dataset repo** (link pending publication) so they can be
 browsed, versioned, and loaded directly with `datasets.load_dataset()`
 instead of bloating this git history. See [docs/data_sources.md](docs/data_sources.md)
@@ -34,10 +35,21 @@ for where the source images come from and where working data currently lives.
 │   │   ├── vispr_caption_generation.ipynb
 │   │   ├── privacyalert_caption_generation.ipynb
 │   │   └── dipa2_caption_generation.ipynb
-│   └── evaluation/             # per-dataset, per-model VLM evaluation notebooks (T1-T4)
+│   └── evaluation/
+│       ├── image_only/         # replication task: single-modality VLM evaluation (T1-T3)
+│       │   ├── vispr/{gemma,llama,qwen}/       # no preserved notebook for ministral
+│       │   ├── privacyalert/{gemma,llama,ministral,qwen}/
+│       │   └── dipa2/{gemma,llama,ministral,qwen}/
+│       └── multimodal/         # image + caption VLM evaluation (T1-T4)
+│           ├── vispr/{gemma,llama,ministral,qwen}/
+│           ├── privacyalert/{gemma,llama,ministral,qwen}/
+│           └── dipa2/dipa2_multimodal_all_models.ipynb
+├── results/
+│   └── image_only/             # committed: replication-task JSON/XLSX results (~120 MB)
 │       ├── vispr/{gemma,llama,ministral,qwen}/
 │       ├── privacyalert/{gemma,llama,ministral,qwen}/
-│       └── dipa2/dipa2_multimodal_all_models.ipynb
+│       ├── dipa2/{gemma,llama,ministral,qwen}/
+│       └── VLM_Privacy_Benchmark_Consolidated.xlsx
 ├── scripts/
 │   └── dataset_stats/          # compute label distributions + cross-model metrics from result JSON
 ├── analysis/
@@ -48,6 +60,11 @@ for where the source images come from and where working data currently lives.
 │   └── data_sources.md         # where the source datasets and working data live
 └── README.md
 ```
+
+`results/multimodal/` (caption-conditioned outputs, multi-GB) is referenced by
+`analysis/caption_effect_evaluation/evaluate_image_only_ground_truth.py` but is not
+committed here — see that script's `MULTIMODAL_FILES` paths and the Hugging Face
+dataset repo once published.
 
 ## Models evaluated
 
@@ -105,12 +122,14 @@ API key. Do not commit API keys, tokens, or private dataset credentials.
 
 ### 3. Run evaluation
 
-Use the model-specific notebooks under `notebooks/evaluation/<dataset>/<model>/`.
-Each notebook defines its model checkpoint, dataset paths, prompts, decoding
-settings, parser, metrics, and output directory, and writes JSON (and where
-available, XLSX) result files. Update the Drive/image-root paths near the
-top of each notebook before running it. The committed notebooks retain the
-paths used for the reported experiments.
+Use the model-specific notebooks under `notebooks/evaluation/image_only/<dataset>/<model>/`
+for single-modality replication (T1-T3), or `notebooks/evaluation/multimodal/<dataset>/<model>/`
+for caption-conditioned evaluation (T1-T4). Each notebook defines its model checkpoint,
+dataset paths, prompts, decoding settings, parser, metrics, and output directory, and
+writes JSON (and where available, XLSX) result files. Update the Drive/image-root paths
+near the top of each notebook before running it. The committed notebooks retain the
+paths used for the reported experiments. Image-only results are committed under
+`results/image_only/`; multimodal results are not (see above).
 
 ### 4. Compute stats
 
