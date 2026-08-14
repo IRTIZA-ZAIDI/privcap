@@ -40,6 +40,9 @@ for where the source images come from and where working data currently lives.
 │       └── dipa2/dipa2_multimodal_all_models.ipynb
 ├── scripts/
 │   └── dataset_stats/          # compute label distributions + cross-model metrics from result JSON
+├── analysis/
+│   └── caption_effect_evaluation/  # controlled re-evaluation: does adding a caption help
+│                                    # or hurt recovery of image-grounded privacy labels?
 ├── docs/
 │   ├── dataset_stats.md        # benchmark summary tables
 │   └── data_sources.md         # where the source datasets and working data live
@@ -71,6 +74,18 @@ prompt, parsing, model-loading, and metric definitions.
 T1-T3 are evaluated on image-only inputs and on image-caption pairs. T4 is
 evaluated on image-caption pairs. DIPA2 evaluation uses T3+T4 only, since all
 DIPA2 images are private.
+
+## Caption effect analysis
+
+[analysis/caption_effect_evaluation/](analysis/caption_effect_evaluation/) holds a
+controlled re-evaluation that isolates the effect of adding a caption from the choice
+of ground truth. Unlike the caption-conditioned evaluation in the notebooks (where the
+target label follows the caption's condition), this analysis fixes ground truth to the
+image label across all three conditions (image-only, image + private caption, image +
+safe caption), so it directly answers: does adding a caption help or hurt a model's
+ability to recover privacy information already present in the image? It covers all
+three source datasets. See that directory's README for the full results tables and
+methodology.
 
 ## Reproducing the workflow
 

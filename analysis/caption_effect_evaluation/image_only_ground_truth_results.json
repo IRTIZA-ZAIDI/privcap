@@ -1,0 +1,4230 @@
+{
+  "method": {
+    "ground_truth": "Image labels only for all three input conditions",
+    "pairing": "Intersection of image IDs available in every compared condition and temperature",
+    "temperature_selection": "Highest image-only Macro F1; same temperature applied to both caption conditions",
+    "conditions": {
+      "image_only": "Replication prediction",
+      "private_caption": "Multimodal explicit/private-caption prediction",
+      "safe_caption": "Multimodal no-leak/safe-caption prediction"
+    }
+  },
+  "results": [
+    {
+      "dataset": "VISPR",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 66.44,
+          "macro_recall": 50.19,
+          "macro_f1": 27.74,
+          "accuracy": 37.79,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 95.24,
+              "recall": 0.4,
+              "f1": 0.8,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 37.63,
+              "recall": 99.97,
+              "f1": 54.68,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 62.53,
+          "macro_recall": 50.05,
+          "macro_f1": 27.45,
+          "accuracy": 37.62,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 87.5,
+              "recall": 0.14,
+              "f1": 0.28,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 37.57,
+              "recall": 99.97,
+              "f1": 54.62,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 68.78,
+          "macro_recall": 50.04,
+          "macro_f1": 27.39,
+          "accuracy": 37.6,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 100.0,
+              "recall": 0.08,
+              "f1": 0.16,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 37.57,
+              "recall": 100.0,
+              "f1": 54.62,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -0.29,
+      "delta_safe_vs_image": -0.35,
+      "delta_private_vs_safe": 0.06
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T2",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 70.23,
+          "macro_recall": 69.5,
+          "macro_f1": 64.41,
+          "accuracy": 64.44,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 88.95,
+              "recall": 49.17,
+              "f1": 63.33,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 51.52,
+              "recall": 89.84,
+              "f1": 65.49,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 67.2,
+          "macro_recall": 62.71,
+          "macro_f1": 53.97,
+          "accuracy": 55.03,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 89.18,
+              "recall": 31.86,
+              "f1": 46.95,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 45.23,
+              "recall": 93.57,
+              "f1": 60.98,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 70.75,
+          "macro_recall": 65.25,
+          "macro_f1": 56.34,
+          "accuracy": 57.37,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 94.75,
+              "recall": 33.61,
+              "f1": 49.62,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 46.74,
+              "recall": 96.9,
+              "f1": 63.06,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -10.44,
+      "delta_safe_vs_image": -8.07,
+      "delta_private_vs_safe": -2.37
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 55.13,
+          "macro_recall": 43.98,
+          "macro_f1": 34.78,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 21.69,
+              "recall": 70.97,
+              "f1": 33.22,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 70.59,
+              "recall": 0.62,
+              "f1": 1.23,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 34.43,
+              "recall": 38.41,
+              "f1": 36.31,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 33.33,
+              "recall": 97.46,
+              "f1": 49.68,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 77.27,
+              "recall": 7.66,
+              "f1": 13.93,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 90.74,
+              "recall": 33.49,
+              "f1": 48.92,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 33.92,
+              "recall": 13.8,
+              "f1": 19.62,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 63.64,
+              "recall": 84.43,
+              "f1": 72.57,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 54.36,
+              "recall": 8.66,
+              "f1": 14.94,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 84.41,
+              "recall": 8.73,
+              "f1": 15.82,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 74.59,
+              "recall": 37.14,
+              "f1": 49.59,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 11.19,
+              "recall": 80.0,
+              "f1": 19.63,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 66.52,
+              "recall": 90.34,
+              "f1": 76.62,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 48.87,
+          "macro_recall": 47.73,
+          "macro_f1": 37.61,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 19.72,
+              "recall": 71.33,
+              "f1": 30.89,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 93.05,
+              "recall": 9.71,
+              "f1": 17.58,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 33.78,
+              "recall": 45.73,
+              "f1": 38.86,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 40.3,
+              "recall": 89.83,
+              "f1": 55.64,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 49.02,
+              "recall": 45.05,
+              "f1": 46.95,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 77.3,
+              "recall": 34.4,
+              "f1": 47.61,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 22.5,
+              "recall": 58.34,
+              "f1": 32.48,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 65.19,
+              "recall": 77.63,
+              "f1": 70.87,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 15.22,
+              "recall": 27.48,
+              "f1": 19.59,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 79.14,
+              "recall": 28.26,
+              "f1": 41.65,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 55.43,
+              "recall": 60.41,
+              "f1": 57.81,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 8.97,
+              "recall": 65.0,
+              "f1": 15.76,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 75.69,
+              "recall": 7.26,
+              "f1": 13.25,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 53.08,
+          "macro_recall": 47.5,
+          "macro_f1": 39.88,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 19.64,
+              "recall": 83.72,
+              "f1": 31.82,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 94.18,
+              "recall": 11.32,
+              "f1": 20.2,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 26.84,
+              "recall": 31.1,
+              "f1": 28.81,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 50.47,
+              "recall": 90.68,
+              "f1": 64.85,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 68.79,
+              "recall": 43.69,
+              "f1": 53.44,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 88.58,
+              "recall": 31.21,
+              "f1": 46.15,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 23.69,
+              "recall": 59.96,
+              "f1": 33.96,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 59.73,
+              "recall": 77.41,
+              "f1": 67.43,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 17.39,
+              "recall": 19.66,
+              "f1": 18.45,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 90.19,
+              "recall": 20.94,
+              "f1": 33.99,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 55.11,
+              "recall": 50.61,
+              "f1": 52.77,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 8.16,
+              "recall": 60.0,
+              "f1": 14.37,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 87.28,
+              "recall": 37.24,
+              "f1": 52.21,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 2.83,
+      "delta_safe_vs_image": 5.1,
+      "delta_private_vs_safe": -2.27
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 68.42,
+          "macro_recall": 68.17,
+          "macro_f1": 63.65,
+          "accuracy": 63.65,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 85.9,
+              "recall": 50.01,
+              "f1": 63.22,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 50.94,
+              "recall": 86.34,
+              "f1": 64.08,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 66.16,
+          "macro_recall": 60.85,
+          "macro_f1": 51.02,
+          "accuracy": 52.61,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 88.44,
+              "recall": 27.74,
+              "f1": 42.23,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 43.88,
+              "recall": 93.97,
+              "f1": 59.82,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 68.89,
+          "macro_recall": 63.8,
+          "macro_f1": 54.84,
+          "accuracy": 55.95,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 91.96,
+              "recall": 32.29,
+              "f1": 47.79,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 45.83,
+              "recall": 95.3,
+              "f1": 61.9,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -12.63,
+      "delta_safe_vs_image": -8.81,
+      "delta_private_vs_safe": -3.82
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T2",
+      "temperature": 1.0,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 68.31,
+          "macro_recall": 68.4,
+          "macro_f1": 64.27,
+          "accuracy": 64.27,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 85.15,
+              "recall": 51.81,
+              "f1": 64.43,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 51.46,
+              "recall": 84.98,
+              "f1": 64.1,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 64.41,
+          "macro_recall": 63.77,
+          "macro_f1": 58.84,
+          "accuracy": 58.9,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 81.51,
+              "recall": 44.22,
+              "f1": 57.34,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 47.31,
+              "recall": 83.31,
+              "f1": 60.35,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 69.54,
+          "macro_recall": 64.05,
+          "macro_f1": 54.92,
+          "accuracy": 56.09,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 93.13,
+              "recall": 32.04,
+              "f1": 47.68,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 45.95,
+              "recall": 96.07,
+              "f1": 62.16,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -5.43,
+      "delta_safe_vs_image": -9.35,
+      "delta_private_vs_safe": 3.92
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 43.24,
+          "macro_recall": 57.63,
+          "macro_f1": 39.05,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 12.08,
+              "recall": 90.27,
+              "f1": 21.31,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 83.44,
+              "recall": 3.39,
+              "f1": 6.52,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 15.86,
+              "recall": 67.68,
+              "f1": 25.69,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 29.79,
+              "recall": 94.92,
+              "f1": 45.34,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 66.07,
+              "recall": 83.33,
+              "f1": 73.71,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 69.48,
+              "recall": 53.76,
+              "f1": 60.62,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 13.86,
+              "recall": 43.91,
+              "f1": 21.07,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 53.69,
+              "recall": 84.65,
+              "f1": 65.7,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 22.85,
+              "recall": 43.92,
+              "f1": 30.06,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 87.21,
+              "recall": 61.62,
+              "f1": 72.22,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 39.52,
+              "recall": 74.69,
+              "f1": 51.69,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 8.43,
+              "recall": 35.0,
+              "f1": 13.59,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 59.8,
+              "recall": 12.09,
+              "f1": 20.12,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 34.78,
+          "macro_recall": 44.88,
+          "macro_f1": 31.01,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 16.34,
+              "recall": 82.65,
+              "f1": 27.29,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 56.01,
+              "recall": 32.83,
+              "f1": 41.4,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 12.96,
+              "recall": 46.95,
+              "f1": 20.32,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 44.77,
+              "recall": 90.68,
+              "f1": 59.94,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 42.13,
+              "recall": 44.59,
+              "f1": 43.33,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 30.89,
+              "recall": 29.46,
+              "f1": 30.16,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 14.61,
+              "recall": 75.83,
+              "f1": 24.5,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 63.16,
+              "recall": 7.89,
+              "f1": 14.04,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 3.74,
+              "recall": 1.5,
+              "f1": 2.14,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 61.21,
+              "recall": 81.8,
+              "f1": 70.02,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 40.04,
+              "recall": 77.14,
+              "f1": 52.72,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 20.0,
+              "recall": 10.0,
+              "f1": 13.33,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 46.27,
+              "recall": 2.07,
+              "f1": 3.95,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 38.46,
+          "macro_recall": 45.34,
+          "macro_f1": 33.39,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 14.49,
+              "recall": 90.8,
+              "f1": 24.99,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 53.32,
+              "recall": 32.44,
+              "f1": 40.34,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 13.9,
+              "recall": 50.0,
+              "f1": 21.75,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 68.67,
+              "recall": 87.29,
+              "f1": 76.87,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 58.45,
+              "recall": 37.39,
+              "f1": 45.6,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 36.56,
+              "recall": 30.68,
+              "f1": 33.36,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 13.58,
+              "recall": 75.92,
+              "f1": 23.04,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 67.12,
+              "recall": 10.75,
+              "f1": 18.53,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 5.5,
+              "recall": 1.61,
+              "f1": 2.49,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 66.52,
+              "recall": 81.69,
+              "f1": 73.33,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 39.39,
+              "recall": 74.29,
+              "f1": 51.49,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 27.27,
+              "recall": 15.0,
+              "f1": 19.35,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 35.16,
+              "recall": 1.5,
+              "f1": 2.88,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -8.04,
+      "delta_safe_vs_image": -5.66,
+      "delta_private_vs_safe": -2.38
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 67.16,
+          "macro_recall": 52.4,
+          "macro_f1": 32.82,
+          "accuracy": 40.65,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 95.59,
+              "recall": 5.21,
+              "f1": 9.88,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 38.72,
+              "recall": 99.6,
+              "f1": 55.76,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 64.59,
+          "macro_recall": 52.62,
+          "macro_f1": 33.83,
+          "accuracy": 41.1,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 90.34,
+              "recall": 6.37,
+              "f1": 11.9,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 38.83,
+              "recall": 98.87,
+              "f1": 55.76,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 66.61,
+          "macro_recall": 52.83,
+          "macro_f1": 33.87,
+          "accuracy": 41.24,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 94.29,
+              "recall": 6.29,
+              "f1": 11.79,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 38.93,
+              "recall": 99.37,
+              "f1": 55.95,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 1.01,
+      "delta_safe_vs_image": 1.05,
+      "delta_private_vs_safe": -0.04
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T2",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 67.8,
+          "macro_recall": 56.48,
+          "macro_f1": 41.33,
+          "accuracy": 45.97,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 94.69,
+              "recall": 14.28,
+              "f1": 24.82,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 40.9,
+              "recall": 98.67,
+              "f1": 57.83,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 62.04,
+          "macro_recall": 56.01,
+          "macro_f1": 43.28,
+          "accuracy": 46.55,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 83.27,
+              "recall": 18.05,
+              "f1": 29.66,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 40.81,
+              "recall": 93.97,
+              "f1": 56.9,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 67.48,
+          "macro_recall": 57.39,
+          "macro_f1": 43.32,
+          "accuracy": 47.27,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 93.51,
+              "recall": 16.72,
+              "f1": 28.37,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 41.45,
+              "recall": 98.07,
+              "f1": 58.27,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 1.95,
+      "delta_safe_vs_image": 1.99,
+      "delta_private_vs_safe": -0.04
+    },
+    {
+      "dataset": "VISPR",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 57.31,
+          "macro_recall": 50.5,
+          "macro_f1": 47.91,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 20.16,
+              "recall": 62.12,
+              "f1": 30.44,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 94.33,
+              "recall": 10.77,
+              "f1": 19.34,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 38.8,
+              "recall": 43.29,
+              "f1": 40.92,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 48.91,
+              "recall": 94.92,
+              "f1": 64.55,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 70.38,
+              "recall": 82.43,
+              "f1": 75.93,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 82.88,
+              "recall": 39.33,
+              "f1": 53.35,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 27.62,
+              "recall": 34.9,
+              "f1": 30.84,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 75.35,
+              "recall": 35.53,
+              "f1": 48.29,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 32.73,
+              "recall": 11.05,
+              "f1": 16.52,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 93.38,
+              "recall": 80.85,
+              "f1": 86.66,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 76.3,
+              "recall": 53.88,
+              "f1": 63.16,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 11.11,
+              "recall": 25.0,
+              "f1": 15.38,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 73.1,
+              "recall": 82.48,
+              "f1": 77.51,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 46.1,
+          "macro_recall": 38.77,
+          "macro_f1": 33.25,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 18.56,
+              "recall": 90.62,
+              "f1": 30.82,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 96.07,
+              "recall": 20.25,
+              "f1": 33.45,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 46.38,
+              "recall": 19.51,
+              "f1": 27.47,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 43.9,
+              "recall": 76.27,
+              "f1": 55.73,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 41.61,
+              "recall": 60.36,
+              "f1": 49.26,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 68.66,
+              "recall": 19.13,
+              "f1": 29.93,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 16.37,
+              "recall": 55.28,
+              "f1": 25.26,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 61.54,
+              "recall": 7.02,
+              "f1": 12.6,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 17.75,
+              "recall": 25.26,
+              "f1": 20.85,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 80.89,
+              "recall": 53.3,
+              "f1": 64.26,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 57.77,
+              "recall": 59.18,
+              "f1": 58.47,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 3.45,
+              "recall": 5.0,
+              "f1": 4.08,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 46.34,
+              "recall": 12.86,
+              "f1": 20.13,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 55.41,
+          "macro_recall": 37.64,
+          "macro_f1": 37.06,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 18.98,
+              "recall": 94.51,
+              "f1": 31.61,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 96.14,
+              "recall": 16.13,
+              "f1": 27.63,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 42.62,
+              "recall": 15.85,
+              "f1": 23.11,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 72.22,
+              "recall": 77.12,
+              "f1": 74.59,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 65.57,
+              "recall": 54.05,
+              "f1": 59.26,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 77.89,
+              "recall": 11.77,
+              "f1": 20.45,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 18.88,
+              "recall": 44.82,
+              "f1": 26.56,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 68.66,
+              "recall": 10.09,
+              "f1": 17.59,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 19.91,
+              "recall": 12.33,
+              "f1": 15.23,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 94.77,
+              "recall": 55.25,
+              "f1": 69.8,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 64.38,
+              "recall": 42.04,
+              "f1": 50.86,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 10.0,
+              "recall": 10.0,
+              "f1": 10.0,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 70.32,
+              "recall": 45.3,
+              "f1": 55.11,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -14.66,
+      "delta_safe_vs_image": -10.85,
+      "delta_private_vs_safe": -3.81
+    },
+    {
+      "dataset": "VISPR",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T1",
+      "temperature": 1.0,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 56.47,
+          "macro_recall": 56.89,
+          "macro_f1": 55.81,
+          "accuracy": 56.52,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 68.89,
+              "recall": 55.4,
+              "f1": 61.41,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 44.05,
+              "recall": 58.39,
+              "f1": 50.21,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 56.06,
+          "macro_recall": 56.47,
+          "macro_f1": 55.34,
+          "accuracy": 56.0,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 68.54,
+              "recall": 54.6,
+              "f1": 60.78,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 43.58,
+              "recall": 58.33,
+              "f1": 49.89,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 56.92,
+          "macro_recall": 56.47,
+          "macro_f1": 51.57,
+          "accuracy": 51.69,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 71.81,
+              "recall": 37.29,
+              "f1": 49.09,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 42.04,
+              "recall": 75.65,
+              "f1": 54.05,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -0.47,
+      "delta_safe_vs_image": -4.24,
+      "delta_private_vs_safe": 3.77
+    },
+    {
+      "dataset": "VISPR",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T2",
+      "temperature": 1.0,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 61.88,
+          "macro_recall": 56.41,
+          "macro_f1": 44.41,
+          "accuracy": 47.27,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 82.67,
+              "recall": 19.69,
+              "f1": 31.8,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 41.08,
+              "recall": 93.14,
+              "f1": 57.01,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 65.19,
+          "macro_recall": 55.09,
+          "macro_f1": 39.37,
+          "accuracy": 44.45,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 90.23,
+              "recall": 12.4,
+              "f1": 21.8,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 40.16,
+              "recall": 97.77,
+              "f1": 56.93,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 63.95,
+          "macro_recall": 53.79,
+          "macro_f1": 36.84,
+          "accuracy": 42.8,
+          "n": 7995,
+          "class_metrics": {
+            "Private": {
+              "precision": 88.46,
+              "recall": 9.67,
+              "f1": 17.44,
+              "support": 4993
+            },
+            "Safe": {
+              "precision": 39.45,
+              "recall": 97.9,
+              "f1": 56.24,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -5.04,
+      "delta_safe_vs_image": -7.57,
+      "delta_private_vs_safe": 2.53
+    },
+    {
+      "dataset": "VISPR",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 7995,
+      "scores": {
+        "image_only": {
+          "macro_precision": 33.05,
+          "macro_recall": 49.98,
+          "macro_f1": 31.08,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 12.33,
+              "recall": 76.64,
+              "f1": 21.24,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 69.91,
+              "recall": 6.14,
+              "f1": 11.28,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 6.72,
+              "recall": 23.78,
+              "f1": 10.48,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 20.95,
+              "recall": 89.83,
+              "f1": 33.97,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 21.3,
+              "recall": 16.22,
+              "f1": 18.41,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 59.51,
+              "recall": 23.99,
+              "f1": 34.2,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 18.09,
+              "recall": 44.82,
+              "f1": 25.77,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 27.64,
+              "recall": 72.37,
+              "f1": 40.0,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 35.67,
+              "recall": 41.81,
+              "f1": 38.5,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 68.04,
+              "recall": 65.31,
+              "f1": 66.65,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 22.54,
+              "recall": 54.29,
+              "f1": 31.86,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 4.31,
+              "recall": 70.0,
+              "f1": 8.12,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 62.6,
+              "recall": 64.56,
+              "f1": 63.56,
+              "support": 3002
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 26.34,
+          "macro_recall": 48.51,
+          "macro_f1": 25.75,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 7.68,
+              "recall": 99.47,
+              "f1": 14.25,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 68.3,
+              "recall": 51.99,
+              "f1": 59.04,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 5.28,
+              "recall": 10.98,
+              "f1": 7.13,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 13.58,
+              "recall": 49.15,
+              "f1": 21.28,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 2.49,
+              "recall": 2.7,
+              "f1": 2.59,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 37.85,
+              "recall": 17.39,
+              "f1": 23.83,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 14.03,
+              "recall": 56.54,
+              "f1": 22.49,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 18.04,
+              "recall": 79.61,
+              "f1": 29.42,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 22.59,
+              "recall": 72.35,
+              "f1": 34.43,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 52.0,
+              "recall": 73.3,
+              "f1": 60.84,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 20.56,
+              "recall": 72.24,
+              "f1": 32.01,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 1.25,
+              "recall": 30.0,
+              "f1": 2.4,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 78.8,
+              "recall": 14.86,
+              "f1": 25.0,
+              "support": 3002
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 27.28,
+          "macro_recall": 45.8,
+          "macro_f1": 27.31,
+          "n": 7995,
+          "image_category_assignments": 13785,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 8.44,
+              "recall": 98.76,
+              "f1": 15.55,
+              "support": 565
+            },
+            "Biometric Data": {
+              "precision": 72.64,
+              "recall": 50.18,
+              "f1": 59.36,
+              "support": 3862
+            },
+            "Digital Identifiers": {
+              "precision": 3.72,
+              "recall": 5.49,
+              "f1": 4.43,
+              "support": 164
+            },
+            "Financial Information": {
+              "precision": 12.7,
+              "recall": 33.05,
+              "f1": 18.35,
+              "support": 118
+            },
+            "HIPAA Data": {
+              "precision": 2.22,
+              "recall": 1.8,
+              "f1": 1.99,
+              "support": 222
+            },
+            "Legal Identifiers": {
+              "precision": 41.13,
+              "recall": 16.02,
+              "f1": 23.06,
+              "support": 1317
+            },
+            "Location Identifiers": {
+              "precision": 14.84,
+              "recall": 57.35,
+              "f1": 23.58,
+              "support": 1109
+            },
+            "Nudity": {
+              "precision": 20.0,
+              "recall": 78.95,
+              "f1": 31.91,
+              "support": 456
+            },
+            "Personal Context": {
+              "precision": 25.16,
+              "recall": 74.96,
+              "f1": 37.68,
+              "support": 1801
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 58.8,
+              "recall": 69.97,
+              "f1": 63.9,
+              "support": 3906
+            },
+            "Vehicle Information": {
+              "precision": 20.37,
+              "recall": 58.37,
+              "f1": 30.2,
+              "support": 245
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 1.02,
+              "recall": 20.0,
+              "f1": 1.93,
+              "support": 20
+            },
+            "Safe": {
+              "precision": 73.63,
+              "recall": 30.51,
+              "f1": 43.15,
+              "support": 3002
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -5.33,
+      "delta_safe_vs_image": -3.77,
+      "delta_private_vs_safe": -1.56
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 74.02,
+          "macro_recall": 50.6,
+          "macro_f1": 44.69,
+          "accuracy": 76.58,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 71.43,
+              "recall": 1.37,
+              "f1": 2.68,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 76.6,
+              "recall": 99.83,
+              "f1": 86.69,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 68.25,
+          "macro_recall": 50.32,
+          "macro_f1": 44.12,
+          "accuracy": 76.45,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 60.0,
+              "recall": 0.82,
+              "f1": 1.62,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 76.5,
+              "recall": 99.83,
+              "f1": 86.63,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 88.22,
+          "macro_recall": 50.13,
+          "macro_f1": 43.59,
+          "accuracy": 76.45,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 100.0,
+              "recall": 0.27,
+              "f1": 0.54,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 76.44,
+              "recall": 100.0,
+              "f1": 86.64,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -0.57,
+      "delta_safe_vs_image": -1.1,
+      "delta_private_vs_safe": 0.53
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T2",
+      "temperature": 1.0,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 73.06,
+          "macro_recall": 72.85,
+          "macro_f1": 72.96,
+          "accuracy": 80.58,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 59.0,
+              "recall": 58.2,
+              "f1": 58.6,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 87.13,
+              "recall": 87.5,
+              "f1": 87.32,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 63.91,
+          "macro_recall": 59.36,
+          "macro_f1": 60.29,
+          "accuracy": 75.68,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 47.49,
+              "recall": 28.42,
+              "f1": 35.56,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 80.32,
+              "recall": 90.29,
+              "f1": 85.01,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 66.11,
+          "macro_recall": 62.55,
+          "macro_f1": 63.66,
+          "accuracy": 76.52,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 50.38,
+              "recall": 36.07,
+              "f1": 42.04,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 81.83,
+              "recall": 89.02,
+              "f1": 85.28,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -12.67,
+      "delta_safe_vs_image": -9.3,
+      "delta_private_vs_safe": -3.37
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 15.24,
+          "macro_recall": 18.15,
+          "macro_f1": 14.79,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 6.61,
+              "recall": 28.16,
+              "f1": 10.7,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 14.29,
+              "recall": 9.09,
+              "f1": 11.11,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 68.69,
+              "recall": 82.69,
+              "f1": 75.04,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 10.73,
+              "recall": 30.16,
+              "f1": 15.83,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 2.2,
+              "recall": 20.0,
+              "f1": 3.96,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 15.91,
+              "recall": 28.57,
+              "f1": 20.44,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 95.0,
+              "recall": 55.46,
+              "f1": 70.04,
+              "support": 1199
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 16.93,
+          "macro_recall": 22.62,
+          "macro_f1": 11.49,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 4.55,
+              "recall": 9.71,
+              "f1": 6.19,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 17.28,
+              "recall": 13.08,
+              "f1": 14.89,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 4.55,
+              "recall": 26.09,
+              "f1": 7.74,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 14.29,
+              "recall": 6.45,
+              "f1": 8.89,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 11.11,
+              "recall": 6.25,
+              "f1": 8.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 2.0,
+              "recall": 9.09,
+              "f1": 3.28,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 2.5,
+              "recall": 53.33,
+              "f1": 4.77,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 68.52,
+              "recall": 80.38,
+              "f1": 73.98,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 4.86,
+              "recall": 52.38,
+              "f1": 8.89,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 1.33,
+              "recall": 30.0,
+              "f1": 2.55,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 3.51,
+              "recall": 11.11,
+              "f1": 5.33,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 8.99,
+              "recall": 16.33,
+              "f1": 11.59,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 93.55,
+              "recall": 2.42,
+              "f1": 4.72,
+              "support": 1199
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 15.95,
+          "macro_recall": 20.41,
+          "macro_f1": 12.66,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 5.03,
+              "recall": 15.53,
+              "f1": 7.6,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 17.27,
+              "recall": 17.76,
+              "f1": 17.51,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 4.13,
+              "recall": 21.74,
+              "f1": 6.94,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 4.55,
+              "recall": 9.09,
+              "f1": 6.06,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 1.86,
+              "recall": 33.33,
+              "f1": 3.52,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 70.75,
+              "recall": 80.0,
+              "f1": 75.09,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 7.17,
+              "recall": 53.97,
+              "f1": 12.66,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.72,
+              "recall": 10.0,
+              "f1": 1.34,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 3.77,
+              "recall": 11.11,
+              "f1": 5.63,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 9.52,
+              "recall": 16.33,
+              "f1": 12.03,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 98.54,
+              "recall": 16.93,
+              "f1": 28.9,
+              "support": 1199
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -3.3,
+      "delta_safe_vs_image": -2.13,
+      "delta_private_vs_safe": -1.17
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 67.09,
+          "macro_recall": 70.09,
+          "macro_f1": 68.05,
+          "accuracy": 74.77,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 47.36,
+              "recall": 61.2,
+              "f1": 53.4,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 86.82,
+              "recall": 78.97,
+              "f1": 82.71,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 68.97,
+          "macro_recall": 68.69,
+          "macro_f1": 68.83,
+          "accuracy": 77.68,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 52.79,
+              "recall": 51.64,
+              "f1": 52.21,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 85.15,
+              "recall": 85.73,
+              "f1": 85.44,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 69.84,
+          "macro_recall": 69.72,
+          "macro_f1": 69.78,
+          "accuracy": 78.26,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 53.99,
+              "recall": 53.55,
+              "f1": 53.77,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 85.68,
+              "recall": 85.9,
+              "f1": 85.79,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 0.78,
+      "delta_safe_vs_image": 1.73,
+      "delta_private_vs_safe": -0.95
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T2",
+      "temperature": 1.0,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 66.97,
+          "macro_recall": 73.2,
+          "macro_f1": 62.07,
+          "accuracy": 63.68,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 38.61,
+              "recall": 91.26,
+              "f1": 54.26,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 95.33,
+              "recall": 55.15,
+              "f1": 69.88,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 70.08,
+          "macro_recall": 77.21,
+          "macro_f1": 70.14,
+          "accuracy": 73.55,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 46.67,
+              "recall": 84.15,
+              "f1": 60.04,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 93.48,
+              "recall": 70.27,
+              "f1": 80.23,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 78.97,
+          "macro_recall": 81.19,
+          "macro_f1": 79.96,
+          "accuracy": 84.97,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 66.26,
+              "recall": 74.04,
+              "f1": 69.94,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 91.67,
+              "recall": 88.34,
+              "f1": 89.98,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 8.07,
+      "delta_safe_vs_image": 17.89,
+      "delta_private_vs_safe": -9.82
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T3",
+      "temperature": 1.0,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 14.95,
+          "macro_recall": 21.99,
+          "macro_f1": 9.09,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 4.28,
+              "recall": 45.63,
+              "f1": 7.82,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 20.0,
+              "recall": 3.74,
+              "f1": 6.3,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 9.09,
+              "recall": 3.12,
+              "f1": 4.65,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 3.85,
+              "recall": 18.18,
+              "f1": 6.35,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 60.56,
+              "recall": 91.54,
+              "f1": 72.89,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 5.77,
+              "recall": 76.19,
+              "f1": 10.73,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.98,
+              "recall": 50.0,
+              "f1": 1.92,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 11.84,
+              "recall": 18.37,
+              "f1": 14.4,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 92.86,
+              "recall": 1.08,
+              "f1": 2.14,
+              "support": 1199
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 16.52,
+          "macro_recall": 25.18,
+          "macro_f1": 8.33,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 5.14,
+              "recall": 23.3,
+              "f1": 8.42,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 13.01,
+              "recall": 68.22,
+              "f1": 21.86,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 7.03,
+              "recall": 39.13,
+              "f1": 11.92,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 6.78,
+              "recall": 12.9,
+              "f1": 8.89,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 12.5,
+              "recall": 12.5,
+              "f1": 12.5,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 0.62,
+              "recall": 9.09,
+              "f1": 1.16,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 1.56,
+              "recall": 60.0,
+              "f1": 3.04,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 82.76,
+              "recall": 18.46,
+              "f1": 30.19,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 4.76,
+              "recall": 14.29,
+              "f1": 7.14,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.86,
+              "recall": 80.0,
+              "f1": 1.7,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 1.96,
+              "recall": 11.11,
+              "f1": 3.33,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 12.5,
+              "recall": 2.04,
+              "f1": 3.51,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 81.82,
+              "recall": 1.5,
+              "f1": 2.95,
+              "support": 1199
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 17.3,
+          "macro_recall": 22.36,
+          "macro_f1": 7.58,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 3.57,
+              "recall": 22.33,
+              "f1": 6.15,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 12.48,
+              "recall": 69.16,
+              "f1": 21.14,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 4.9,
+              "recall": 21.74,
+              "f1": 8.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 5.66,
+              "recall": 9.68,
+              "f1": 7.14,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 50.0,
+              "recall": 3.12,
+              "f1": 5.88,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 0.64,
+              "recall": 9.09,
+              "f1": 1.19,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 1.55,
+              "recall": 60.0,
+              "f1": 3.02,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 79.01,
+              "recall": 24.62,
+              "f1": 37.54,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 6.17,
+              "recall": 15.87,
+              "f1": 8.89,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.67,
+              "recall": 60.0,
+              "f1": 1.32,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 2.5,
+              "recall": 16.67,
+              "f1": 4.35,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 75.0,
+              "recall": 0.75,
+              "f1": 1.49,
+              "support": 1199
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -0.76,
+      "delta_safe_vs_image": -1.51,
+      "delta_private_vs_safe": 0.75
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 86.55,
+          "macro_recall": 54.97,
+          "macro_f1": 52.99,
+          "accuracy": 78.65,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 94.87,
+              "recall": 10.11,
+              "f1": 18.27,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 78.23,
+              "recall": 99.83,
+              "f1": 87.72,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 73.75,
+          "macro_recall": 58.17,
+          "macro_f1": 58.67,
+          "accuracy": 78.77,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 67.96,
+              "recall": 19.13,
+              "f1": 29.85,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 79.54,
+              "recall": 97.21,
+              "f1": 87.5,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 81.45,
+          "macro_recall": 57.83,
+          "macro_f1": 57.94,
+          "accuracy": 79.55,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 83.56,
+              "recall": 16.67,
+              "f1": 27.79,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 79.35,
+              "recall": 98.99,
+              "f1": 88.09,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 5.68,
+      "delta_safe_vs_image": 4.95,
+      "delta_private_vs_safe": 0.73
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T2",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 72.28,
+          "macro_recall": 63.17,
+          "macro_f1": 65.06,
+          "accuracy": 79.48,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 62.77,
+              "recall": 32.24,
+              "f1": 42.6,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 81.79,
+              "recall": 94.09,
+              "f1": 87.51,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 66.83,
+          "macro_recall": 62.12,
+          "macro_f1": 63.4,
+          "accuracy": 77.03,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 52.1,
+              "recall": 33.88,
+              "f1": 41.06,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 81.55,
+              "recall": 90.37,
+              "f1": 85.74,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 70.09,
+          "macro_recall": 60.37,
+          "macro_f1": 61.7,
+          "accuracy": 78.39,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 59.63,
+              "recall": 26.23,
+              "f1": 36.43,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 80.56,
+              "recall": 94.51,
+              "f1": 86.98,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -1.66,
+      "delta_safe_vs_image": -3.36,
+      "delta_private_vs_safe": 1.7
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 17.3,
+          "macro_recall": 19.49,
+          "macro_f1": 13.83,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 4.23,
+              "recall": 11.65,
+              "f1": 6.2,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 15.94,
+              "recall": 30.84,
+              "f1": 21.02,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 14.29,
+              "recall": 3.12,
+              "f1": 5.13,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 82.46,
+              "recall": 54.23,
+              "f1": 65.43,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 13.15,
+              "recall": 44.44,
+              "f1": 20.29,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 1.03,
+              "recall": 70.0,
+              "f1": 2.03,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 12.9,
+              "recall": 16.33,
+              "f1": 14.41,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 98.25,
+              "recall": 42.2,
+              "f1": 59.04,
+              "support": 1199
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 20.34,
+          "macro_recall": 23.93,
+          "macro_f1": 11.24,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 8.74,
+              "recall": 36.89,
+              "f1": 14.13,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 27.27,
+              "recall": 42.06,
+              "f1": 33.09,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 5.31,
+              "recall": 26.09,
+              "f1": 8.82,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 33.33,
+              "recall": 3.23,
+              "f1": 5.88,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 13.33,
+              "recall": 25.0,
+              "f1": 17.39,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 1.36,
+              "recall": 43.33,
+              "f1": 2.64,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 80.0,
+              "recall": 27.69,
+              "f1": 41.14,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 4.06,
+              "recall": 39.68,
+              "f1": 7.36,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 1.59,
+              "recall": 70.0,
+              "f1": 3.12,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 4.44,
+              "recall": 11.11,
+              "f1": 6.35,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 14.29,
+              "recall": 4.08,
+              "f1": 6.35,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 91.03,
+              "recall": 5.92,
+              "f1": 11.12,
+              "support": 1199
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 18.09,
+          "macro_recall": 20.23,
+          "macro_f1": 12.15,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 7.26,
+              "recall": 30.1,
+              "f1": 11.7,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 23.67,
+              "recall": 37.38,
+              "f1": 28.99,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 6.19,
+              "recall": 26.09,
+              "f1": 10.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 1.65,
+              "recall": 30.0,
+              "f1": 3.12,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 82.42,
+              "recall": 28.85,
+              "f1": 42.74,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 9.09,
+              "recall": 41.27,
+              "f1": 14.9,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 1.19,
+              "recall": 50.0,
+              "f1": 2.33,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 2.63,
+              "recall": 5.56,
+              "f1": 3.57,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 25.0,
+              "recall": 8.16,
+              "f1": 12.31,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 94.21,
+              "recall": 25.77,
+              "f1": 40.47,
+              "support": 1199
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -2.59,
+      "delta_safe_vs_image": -1.68,
+      "delta_private_vs_safe": -0.91
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T1",
+      "temperature": 0.1,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 45.23,
+          "macro_recall": 44.13,
+          "macro_f1": 44.22,
+          "accuracy": 54.58,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 17.25,
+              "recall": 24.32,
+              "f1": 20.18,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 73.21,
+              "recall": 63.94,
+              "f1": 68.26,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 60.9,
+          "macro_recall": 63.67,
+          "macro_f1": 61.22,
+          "accuracy": 68.0,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 37.87,
+              "recall": 55.46,
+              "f1": 45.01,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 83.93,
+              "recall": 71.88,
+              "f1": 77.43,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 63.0,
+          "macro_recall": 59.94,
+          "macro_f1": 60.78,
+          "accuracy": 74.84,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 45.31,
+              "recall": 31.69,
+              "f1": 37.3,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 80.68,
+              "recall": 88.18,
+              "f1": 84.26,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 17.0,
+      "delta_safe_vs_image": 16.56,
+      "delta_private_vs_safe": 0.44
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T2",
+      "temperature": 1.0,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 69.66,
+          "macro_recall": 68.78,
+          "macro_f1": 69.19,
+          "accuracy": 78.26,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 54.23,
+              "recall": 50.82,
+              "f1": 52.47,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 85.09,
+              "recall": 86.74,
+              "f1": 85.91,
+              "support": 1184
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 71.81,
+          "macro_recall": 65.0,
+          "macro_f1": 66.87,
+          "accuracy": 79.55,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 60.89,
+              "recall": 37.43,
+              "f1": 46.36,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 82.72,
+              "recall": 92.57,
+              "f1": 87.37,
+              "support": 1184
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 74.02,
+          "macro_recall": 61.37,
+          "macro_f1": 63.04,
+          "accuracy": 79.61,
+          "n": 1550,
+          "class_metrics": {
+            "Private": {
+              "precision": 67.12,
+              "recall": 26.78,
+              "f1": 38.28,
+              "support": 366
+            },
+            "Safe": {
+              "precision": 80.91,
+              "recall": 95.95,
+              "f1": 87.79,
+              "support": 1184
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -2.32,
+      "delta_safe_vs_image": -6.15,
+      "delta_private_vs_safe": 3.83
+    },
+    {
+      "dataset": "PrivacyAlert",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T3",
+      "temperature": 1.0,
+      "n": 1550,
+      "scores": {
+        "image_only": {
+          "macro_precision": 12.14,
+          "macro_recall": 12.92,
+          "macro_f1": 9.73,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 5.84,
+              "recall": 40.78,
+              "f1": 10.22,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 16.13,
+              "recall": 4.67,
+              "f1": 7.25,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 2.33,
+              "recall": 9.09,
+              "f1": 3.7,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 45.97,
+              "recall": 74.62,
+              "f1": 56.89,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 2.67,
+              "recall": 3.17,
+              "f1": 2.9,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 1.1,
+              "recall": 10.0,
+              "f1": 1.98,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 5.0,
+              "recall": 6.12,
+              "f1": 5.5,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 90.87,
+              "recall": 32.36,
+              "f1": 47.72,
+              "support": 1199
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 18.11,
+          "macro_recall": 19.73,
+          "macro_f1": 10.73,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 6.28,
+              "recall": 83.5,
+              "f1": 11.68,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 13.66,
+              "recall": 23.36,
+              "f1": 17.24,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 5.26,
+              "recall": 21.74,
+              "f1": 8.47,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 22.22,
+              "recall": 6.45,
+              "f1": 10.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 2.13,
+              "recall": 18.18,
+              "f1": 3.81,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.75,
+              "recall": 3.33,
+              "f1": 1.23,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 69.6,
+              "recall": 60.77,
+              "f1": 64.89,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 5.72,
+              "recall": 39.68,
+              "f1": 10.0,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 5.88,
+              "recall": 11.11,
+              "f1": 7.69,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 50.0,
+              "recall": 4.08,
+              "f1": 7.55,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 72.06,
+              "recall": 4.09,
+              "f1": 7.73,
+              "support": 1199
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 15.8,
+          "macro_recall": 16.15,
+          "macro_f1": 9.53,
+          "n": 1550,
+          "image_category_assignments": 745,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 6.54,
+              "recall": 83.5,
+              "f1": 12.14,
+              "support": 103
+            },
+            "Biometric Data": {
+              "precision": 13.7,
+              "recall": 18.69,
+              "f1": 15.81,
+              "support": 107
+            },
+            "Children Images": {
+              "precision": 6.58,
+              "recall": 21.74,
+              "f1": 10.1,
+              "support": 23
+            },
+            "Digital Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 31
+            },
+            "Financial Information": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "HIPAA Data": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 32
+            },
+            "Legal Identifiers": {
+              "precision": 1.85,
+              "recall": 9.09,
+              "f1": 3.08,
+              "support": 11
+            },
+            "Location Identifiers": {
+              "precision": 0.98,
+              "recall": 3.33,
+              "f1": 1.52,
+              "support": 30
+            },
+            "Nudity": {
+              "precision": 61.85,
+              "recall": 41.15,
+              "f1": 49.42,
+              "support": 260
+            },
+            "Personal Context": {
+              "precision": 4.38,
+              "recall": 25.4,
+              "f1": 7.48,
+              "support": 63
+            },
+            "Personal Metadata (Demographics)": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 10
+            },
+            "Vehicle Information": {
+              "precision": 13.33,
+              "recall": 11.11,
+              "f1": 12.12,
+              "support": 18
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 33.33,
+              "recall": 4.08,
+              "f1": 7.27,
+              "support": 49
+            },
+            "Safe": {
+              "precision": 78.69,
+              "recall": 8.01,
+              "f1": 14.53,
+              "support": 1199
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 1.0,
+      "delta_safe_vs_image": -0.2,
+      "delta_private_vs_safe": 1.2
+    },
+    {
+      "dataset": "DIPA2",
+      "model": "Ministral-3B",
+      "model_key": "ministral",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 265,
+      "scores": {
+        "image_only": {
+          "macro_precision": 42.48,
+          "macro_recall": 24.34,
+          "macro_f1": 26.38,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 100.0,
+              "recall": 0.49,
+              "f1": 0.98,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 83.33,
+              "recall": 71.43,
+              "f1": 76.92,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 8.33,
+              "recall": 6.25,
+              "f1": 7.14,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 50.0,
+              "recall": 34.43,
+              "f1": 40.78,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 85.71,
+              "recall": 57.14,
+              "f1": 68.57,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 12.5,
+              "recall": 25.0,
+              "f1": 16.67,
+              "support": 4
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 42.51,
+          "macro_recall": 43.69,
+          "macro_f1": 32.64,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 1.52,
+              "recall": 50.0,
+              "f1": 2.94,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 100.0,
+              "recall": 7.35,
+              "f1": 13.7,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 82.61,
+              "recall": 54.29,
+              "f1": 65.52,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 14.08,
+              "recall": 62.5,
+              "f1": 22.99,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 50.55,
+              "recall": 75.41,
+              "f1": 60.53,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 91.3,
+              "recall": 100.0,
+              "f1": 95.45,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 43.65,
+          "macro_recall": 34.42,
+          "macro_f1": 29.57,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 1.06,
+              "recall": 50.0,
+              "f1": 2.08,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 92.86,
+              "recall": 6.37,
+              "f1": 11.93,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 94.44,
+              "recall": 48.57,
+              "f1": 64.15,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 5.36,
+              "recall": 18.75,
+              "f1": 8.33,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 48.77,
+              "recall": 64.75,
+              "f1": 55.63,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 86.67,
+              "recall": 61.9,
+              "f1": 72.22,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 20.0,
+              "recall": 25.0,
+              "f1": 22.22,
+              "support": 4
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 6.26,
+      "delta_safe_vs_image": 3.19,
+      "delta_private_vs_safe": 3.07
+    },
+    {
+      "dataset": "DIPA2",
+      "model": "Gemma-3-4B",
+      "model_key": "gemma",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 265,
+      "scores": {
+        "image_only": {
+          "macro_precision": 38.96,
+          "macro_recall": 58.32,
+          "macro_f1": 34.54,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 1.13,
+              "recall": 100.0,
+              "f1": 2.23,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 95.45,
+              "recall": 10.29,
+              "f1": 18.58,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 54.1,
+              "recall": 94.29,
+              "f1": 68.75,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 6.25,
+              "recall": 25.0,
+              "f1": 10.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 9.68,
+              "recall": 56.25,
+              "f1": 16.51,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 50.0,
+              "recall": 55.74,
+              "f1": 52.71,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 80.77,
+              "recall": 100.0,
+              "f1": 89.36,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 14.29,
+              "recall": 25.0,
+              "f1": 18.18,
+              "support": 4
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 37.39,
+          "macro_recall": 39.38,
+          "macro_f1": 28.76,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 88.1,
+              "recall": 18.14,
+              "f1": 30.08,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 61.11,
+              "recall": 94.29,
+              "f1": 74.16,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 3.45,
+              "recall": 12.5,
+              "f1": 5.41,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 10.49,
+              "recall": 93.75,
+              "f1": 18.87,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 54.17,
+              "recall": 10.66,
+              "f1": 17.81,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 81.82,
+              "recall": 85.71,
+              "f1": 83.72,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 33.44,
+          "macro_recall": 45.51,
+          "macro_f1": 28.37,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.8,
+              "recall": 50.0,
+              "f1": 1.57,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 76.79,
+              "recall": 21.08,
+              "f1": 33.08,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 58.93,
+              "recall": 94.29,
+              "f1": 72.53,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 5.26,
+              "recall": 12.5,
+              "f1": 7.41,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 9.38,
+              "recall": 93.75,
+              "f1": 17.05,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 42.42,
+              "recall": 11.48,
+              "f1": 18.06,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 73.91,
+              "recall": 80.95,
+              "f1": 77.27,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -5.78,
+      "delta_safe_vs_image": -6.17,
+      "delta_private_vs_safe": 0.39
+    },
+    {
+      "dataset": "DIPA2",
+      "model": "Qwen3-VL-8B",
+      "model_key": "qwen",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 265,
+      "scores": {
+        "image_only": {
+          "macro_precision": 39.65,
+          "macro_recall": 51.77,
+          "macro_f1": 40.58,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.85,
+              "recall": 50.0,
+              "f1": 1.67,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 87.36,
+              "recall": 77.94,
+              "f1": 82.38,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 80.0,
+              "recall": 80.0,
+              "f1": 80.0,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 12.2,
+              "recall": 62.5,
+              "f1": 20.41,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 50.39,
+              "recall": 53.28,
+              "f1": 51.79,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 86.36,
+              "recall": 90.48,
+              "f1": 88.37,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 40.8,
+          "macro_recall": 38.2,
+          "macro_f1": 27.54,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 1.18,
+              "recall": 100.0,
+              "f1": 2.34,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 89.21,
+              "recall": 60.78,
+              "f1": 72.3,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 100.0,
+              "recall": 40.0,
+              "f1": 57.14,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 12.68,
+              "recall": 56.25,
+              "f1": 20.69,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 33.33,
+              "recall": 5.74,
+              "f1": 9.79,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 90.0,
+              "recall": 42.86,
+              "f1": 58.06,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 41.68,
+          "macro_recall": 33.85,
+          "macro_f1": 25.29,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 1.25,
+              "recall": 100.0,
+              "f1": 2.47,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 89.54,
+              "recall": 67.16,
+              "f1": 76.75,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 100.0,
+              "recall": 28.57,
+              "f1": 44.44,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 10.0,
+              "recall": 31.25,
+              "f1": 15.15,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 43.75,
+              "recall": 5.74,
+              "f1": 10.14,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 88.89,
+              "recall": 38.1,
+              "f1": 53.33,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": -13.04,
+      "delta_safe_vs_image": -15.29,
+      "delta_private_vs_safe": 2.25
+    },
+    {
+      "dataset": "DIPA2",
+      "model": "LLaMA-3.2-11B",
+      "model_key": "llama",
+      "task": "T3",
+      "temperature": 0.1,
+      "n": 265,
+      "scores": {
+        "image_only": {
+          "macro_precision": 24.71,
+          "macro_recall": 45.51,
+          "macro_f1": 24.3,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.45,
+              "recall": 50.0,
+              "f1": 0.9,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 67.8,
+              "recall": 19.61,
+              "f1": 30.42,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 38.46,
+              "recall": 71.43,
+              "f1": 50.0,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 2.22,
+              "recall": 12.5,
+              "f1": 3.77,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 7.19,
+              "recall": 68.75,
+              "f1": 13.02,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 45.95,
+              "recall": 41.8,
+              "f1": 43.78,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 35.59,
+              "recall": 100.0,
+              "f1": 52.5,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "private_caption": {
+          "macro_precision": 33.02,
+          "macro_recall": 45.77,
+          "macro_f1": 29.7,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.77,
+              "recall": 100.0,
+              "f1": 1.52,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 78.07,
+              "recall": 43.63,
+              "f1": 55.97,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 53.33,
+              "recall": 22.86,
+              "f1": 32.0,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 7.02,
+              "recall": 50.0,
+              "f1": 12.31,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 46.71,
+              "recall": 63.93,
+              "f1": 53.98,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 78.26,
+              "recall": 85.71,
+              "f1": 81.82,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        },
+        "safe_caption": {
+          "macro_precision": 32.59,
+          "macro_recall": 42.12,
+          "macro_f1": 27.02,
+          "n": 265,
+          "image_category_assignments": 412,
+          "category_metrics": {
+            "Background Individuals": {
+              "precision": 0.76,
+              "recall": 100.0,
+              "f1": 1.52,
+              "support": 2
+            },
+            "Biometric Data": {
+              "precision": 79.71,
+              "recall": 53.92,
+              "f1": 64.33,
+              "support": 204
+            },
+            "Digital Identifiers": {
+              "precision": 50.0,
+              "recall": 8.57,
+              "f1": 14.63,
+              "support": 35
+            },
+            "Legal Identifiers": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 8
+            },
+            "Location Identifiers": {
+              "precision": 6.36,
+              "recall": 43.75,
+              "f1": 11.11,
+              "support": 16
+            },
+            "Personal Context": {
+              "precision": 47.46,
+              "recall": 68.85,
+              "f1": 56.19,
+              "support": 122
+            },
+            "Vehicle Information": {
+              "precision": 76.47,
+              "recall": 61.9,
+              "f1": 68.42,
+              "support": 21
+            },
+            "Violent/Unlawful Actions": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 4
+            }
+          }
+        }
+      },
+      "delta_private_vs_image": 5.4,
+      "delta_safe_vs_image": 2.72,
+      "delta_private_vs_safe": 2.68
+    }
+  ]
+}
